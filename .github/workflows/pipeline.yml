@@ -1,0 +1,27 @@
+name: Java_Checkstyle_pipeline
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  checkstyle_project:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Git clone repo
+        uses: actions/checkout@v2
+
+      - name: Setup JDK
+        uses: actions/setup-java@v2
+        with:
+          java-version: '11'
+
+      - name: Download Checkstyle
+        run: |
+          wget https://github.com/checkstyle/checkstyle/releases/download/checkstyle-9.0/checkstyle-9.0-all.jar
+
+      - name: Check style project
+        run: |
+          java -jar checkstyle-9.0-all.jar -c config/checkstyle.xml src/main/java

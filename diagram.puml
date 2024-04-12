@@ -1,0 +1,430 @@
+@startuml
+class com.example.nj.EmployeeDialogActivity {
+- FirebaseListAdapter<Dialog> adapter
+- Button teams
+- FloatingActionButton newMsg
+~ BottomNavigationView bottomNavigationView
+~ String userMail
+~ int Code
+~ DatabaseReference db
+~ int empty
+~ DatabaseReference users
+~ FirebaseAuth mAuth
+~ Query query
+~ DatabaseReference dialogs
+~ ListView listView
+# void onCreate(Bundle)
+- void displayUsers()
++ void nameUser(TextView,TextView,TextView,ImageView,String,String)
++ void getDialog(String)
+}
+
+
+class com.example.nj.ChatActivity {
+- FirebaseListAdapter<Message> adapter
+- FloatingActionButton sendBtn
+~ String companyUid
+~ int empty
+~ int currentFile
+~ DatabaseReference users
+~ Query query
+~ boolean stopCount
+- Uri filePath
+- int PICK_REQUEST
+~ int updated
+~ ListView listView
+~ FirebaseMessaging messaging
+~ EditText textfield
+~ StorageReference storageReference
+~ FirebaseStorage storage
+# void onCreate(Bundle)
+- void displayAllMessages()
+- void displayUserMessages()
++ void uploadImage()
++ void newMessage(Uri)
++ void newMessageLS(Uri)
++ void updateDialogsFile()
++ void updateDialogs(String)
++ void typeDocDialog(Activity)
+# void onActivityResult(int,int,Intent)
++ void сreateDialog(Activity,String,String)
++ void findFile(String,String)
++ void downloadFiles(Context,String,String,String,String)
++ void deleteMessage(String,String)
++ void requestToUsers()
+- void sendPushNotification(String)
+}
+
+
+class com.example.nj.CompanyProfileAuthorizeActivity {
+~ Button nextadd
+~ EditText pass
+~ DatabaseReference users
+~ FirebaseAuth mAuth
+~ FirebaseDatabase db
+~ String company_UID
+~ BottomNavigationView bottomNavigationView
+# void onCreate(Bundle)
+- void next()
+- void nextComp()
+}
+
+
+class com.example.nj.classes.Invitation {
++ String uid
++ String companyRecieverUid
++ String userReciever
++ String getUid()
++ void setUid(String)
++ String getCompanyRecieverUid()
++ void setCompanyRecieverUid(String)
++ String getUserReciever()
++ void setUserReciever(String)
+}
+
+
+class com.example.nj.ShowInvitationsActivity {
+~ ListView listView
+- FirebaseListAdapter<Invitation> adapter
+~ DatabaseReference invitations
+~ FirebaseAuth mAuth
+~ DatabaseReference db
+~ Query query
+~ Button chatBtn
+~ String curUser
+# void onCreate(Bundle)
+- void deleteInvitation(String)
+- void addUser(String)
+- void displayInvitations()
++ void nameUser(TextView,TextView,TextView,ImageView,String)
+}
+
+
+class com.example.nj.InvitationActivity {
+~ EditText empMail
+~ Button addWork
+~ String companyUID
+~ DatabaseReference users
+# void onCreate(Bundle)
+}
+
+
+class com.example.nj.classes.Dialog {
++ String uid
++ String actualUser
++ String userReceiver
++ String lastMessage
++ int newMessages
++ int getNewMessages()
++ void setNewMessages(int)
++ String getUid()
++ void setUid(String)
++ String getActualUser()
++ void setActualUser(String)
++ String getUserReceiver()
++ void setUserReceiver(String)
++ String getLastMessage()
++ void setLastMessage(String)
+}
+
+
+class com.example.nj.StartActivity {
+- Button signIn
+- ImageButton signUp
+~ FirebaseAuth firebaseAuth
+- EditText emailText
+~ String email
+~ TextView updatepass
+# void onCreate(Bundle)
+- void validData()
+- void firebaseAuthorization()
+}
+
+
+class com.example.nj.classes.Company {
++ String uid
++ String companyName
++ String ogrn
++ String companyView
++ String companyTags
++ Date dataFound
++ String callingUser
++ String companyLogo
++ String adminPassword
++ String getUid()
++ void setUid(String)
++ String getCompanyName()
++ void setCompanyName(String)
++ String getOgrn()
++ void setOgrn(String)
++ String getCompanyView()
++ void setCompanyView(String)
++ String getCompanyTags()
++ void setCompanyTags(String)
++ Date getDataFound()
++ void setDataFound(Date)
++ String getCallingUser()
++ void setCallingUser(String)
++ String getCompanyLogo()
++ void setCompanyLogo(String)
++ String getAdminPassword()
++ void setAdminPassword(String)
+}
+
+
+class com.example.nj.ui.home.HomeViewModel {
+- MutableLiveData<String> name
+- MutableLiveData<String> tags
+- MutableLiveData<String> image
+~ String email
+~ DatabaseReference db
+~ DatabaseReference db1
+- void findUser()
+- void findCompany(String)
++ LiveData<String> getName()
++ LiveData<String> getTag()
++ LiveData<String> getImage()
+}
+
+
+class com.example.nj.SettingsActivity {
+~ EditText usName
+~ Button updateus
+~ DatabaseReference users
+~ Query query
+~ String mail
+# void onCreate(Bundle)
+}
+
+
+class com.example.nj.classes.User {
++ String uid
++ String mail
++ String password
++ int age
++ String nickName
++ String realName
++ String surName
++ String secondName
++ String photo
++ String company_UID
++ String getUid()
++ void setUid(String)
++ String getMail()
++ void setMail(String)
++ String getPassword()
++ void setPassword(String)
++ int getAge()
++ void setAge(int)
++ String getNickName()
++ void setNickName(String)
++ String getRealName()
++ void setRealName(String)
++ String getSurName()
++ void setSurName(String)
++ String getSecondName()
++ void setSecondName(String)
++ String getPhoto()
++ void setPhoto(String)
++ String getCompany_UID()
++ void setCompany_UID(String)
+}
+
+
+class com.example.nj.ui.home.HomeFragment {
+- FragmentHomeBinding binding
+~ ShapeableImageView imageView
+~ String email
+~ DatabaseReference db
+~ DatabaseReference db1
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
+- void loadImageIntoImageView(String)
+- void findUser()
+- void findInvite()
++ void onDestroyView()
+}
+
+
+class com.example.nj.FindUserActivity {
+~ ListView listView
+- FirebaseListAdapter<User> adapter
+~ DatabaseReference users
+~ FirebaseAuth mAuth
+~ DatabaseReference db
+~ Query query
+~ Button chatBtn
+~ String curUser
+# void onCreate(Bundle)
+- void displayUsers()
+}
+
+
+class com.example.nj.MainActivity {
+- AppBarConfiguration mAppBarConfiguration
+- ActivityMainBinding binding
+~ DatabaseReference db
+~ FirebaseStorage storage
+~ StorageReference storageReference
+~ TextView nametext
+~ ShapeableImageView imageView
+~ FirebaseAuth firebaseAuth
+~ String email
+# void onCreate(Bundle)
++ boolean onCreateOptionsMenu(Menu)
++ boolean onSupportNavigateUp()
++ void signout(MenuItem)
++ void profile(MenuItem)
+}
+
+
+class com.example.nj.CompanyProfileActivity {
+~ FirebaseAuth firebaseAuth
+~ DatabaseReference db
+~ TextView name
+~ ShapeableImageView image
+~ String email
+~ Button settings
+- Uri filePath
+- int PICK_REQUEST
+~ FirebaseStorage storage
+~ StorageReference storageReference
+# void onCreate(Bundle)
++ void chooseImage()
+# void onActivityResult(int,int,Intent)
++ void uploadImage()
++ void newAvatarka(Uri)
+}
+
+
+class com.example.nj.ProfileActivity {
+~ FirebaseAuth firebaseAuth
+~ DatabaseReference db
+~ TextView mail
+~ ShapeableImageView image
+~ String email
+~ Button settings
+- Uri filePath
+- int PICK_REQUEST
+~ FirebaseStorage storage
+~ StorageReference storageReference
+# void onCreate(Bundle)
++ void chooseImage()
+# void onActivityResult(int,int,Intent)
++ void uploadImage()
++ void newAvatarka(Uri)
+}
+
+
+class com.example.nj.classes.Message {
++ String userName
++ String textMessage
+- long messageTime
++ String messageCode
++ String messageType
++ String messageReference
++ String messageFormat
++ String getUserName()
++ void setUserName(String)
++ String getTextMessage()
++ void setTextMessage(String)
++ long getMessageTime()
++ void setMessageTime(long)
++ String getMessageCode()
++ void setMessageCode(String)
++ String getMessageType()
++ void setMessageType(String)
++ String getMessageReference()
++ void setMessageReference(String)
++ String getMessageFormat()
++ void setMessageFormat(String)
+}
+
+
+class com.example.nj.RegistrationCompanyActivity {
+- EditText company_name
+- Button butt_reg
+- String name
+- FirebaseAuth firebaseAuth
+~ FirebaseStorage storage
+~ StorageReference storageReference
+~ DatabaseReference db
+# void onCreate(Bundle)
+- void validData()
+- void companyRegistration()
+- void addUser(String,String)
+}
+
+
+class com.example.nj.RegistrationActivity {
+- EditText pass_reg
+- Button butt_reg
+- String email
+- FirebaseAuth firebaseAuth
+~ int check
+~ FirebaseStorage storage
+~ StorageReference storageReference
+~ DatabaseReference users
+# void onCreate(Bundle)
+- void validData()
+- void firebaseCheck(String)
+- void firebaseRegistration()
+}
+
+
+class com.example.nj.CompanySettingsActivity {
+~ EditText name
+~ Button updateus
+~ DatabaseReference companies
+~ Query query
+~ String mail
+# void onCreate(Bundle)
+}
+
+
+class com.example.nj.MyFirebaseMessagingService {
+- {static} String TAG
+~ DatabaseReference users
+~ String curUser
++ void onNewToken(String)
++ void onMessageReceived(RemoteMessage)
+}
+
+
+class com.example.nj.ShowUsersActivity {
+~ ListView listView
+- FirebaseListAdapter<User> adapter
+~ DatabaseReference users
+~ FirebaseAuth mAuth
+~ DatabaseReference db
+~ Query query
+~ Button chatBtn
+~ String curUser
+~ FloatingActionButton btnNew
+# void onCreate(Bundle)
+- void deleteUser(String)
+- void deleteDialogs(String)
+- void displayUsers()
+}
+
+
+
+
+androidx.appcompat.app.AppCompatActivity <|-- com.example.nj.EmployeeDialogActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.nj.ChatActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.nj.CompanyProfileAuthorizeActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.nj.ShowInvitationsActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.nj.InvitationActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.nj.StartActivity
+androidx.lifecycle.ViewModel <|-- com.example.nj.ui.home.HomeViewModel
+androidx.appcompat.app.AppCompatActivity <|-- com.example.nj.SettingsActivity
+androidx.fragment.app.Fragment <|-- com.example.nj.ui.home.HomeFragment
+androidx.appcompat.app.AppCompatActivity <|-- com.example.nj.FindUserActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.nj.MainActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.nj.CompanyProfileActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.nj.ProfileActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.nj.RegistrationCompanyActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.nj.RegistrationActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.nj.CompanySettingsActivity
+com.google.firebase.messaging.FirebaseMessagingService <|-- com.example.nj.MyFirebaseMessagingService
+androidx.appcompat.app.AppCompatActivity <|-- com.example.nj.ShowUsersActivity
+@enduml

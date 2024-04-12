@@ -1,0 +1,88 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingTop="16dp"
+    android:paddingRight="16dp"
+    android:paddingBottom="16dp"
+    android:background="@drawable/main_theme"
+    tools:context=".RegistrationCompanyActivity">
+
+    <TextView
+        android:id="@+id/NJ"
+        android:layout_width="106dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="162dp"
+        android:layout_marginEnd="162dp"
+        android:text="NJ"
+        android:textAlignment="center"
+        android:textColor="#AFAEAB"
+        android:typeface="serif"
+        android:textSize="50dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/companyName"
+        android:layout_width="395dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="162dp"
+        android:layout_marginEnd="0dp"
+        android:drawableLeft="@drawable/messenger_bubble_small_white"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:hint="   Название" />
+
+
+    <EditText
+        android:id="@+id/tagsCompany"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/companyName"
+        android:layout_marginTop="13dp"
+        android:drawableLeft="@drawable/messenger_bubble_small_white"
+        android:hint="    Теги компании"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"/>
+
+    <EditText
+        android:id="@+id/viewCompany"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/companyName"
+        android:layout_marginTop="70dp"
+        android:drawableLeft="@drawable/messenger_bubble_small_white"
+        android:hint="    Описание деятельности"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"/>
+
+    <EditText
+        android:id="@+id/passwordCompany"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/companyName"
+        android:layout_marginTop="128dp"
+        android:drawableLeft="@drawable/messenger_bubble_small_white"
+        android:hint="    Пароль администратора"
+        android:inputType="textPassword"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonReg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tagsCompany"
+        android:layout_marginTop="214dp"
+        android:background="@drawable/button_main"
+        android:text="Создать компанию"
+        android:textColor="@color/white"
+        android:typeface="serif" />
+
+</RelativeLayout>

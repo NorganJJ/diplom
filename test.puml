@@ -1,0 +1,68 @@
+@startuml
+class com.example.nj.EmployeeDialogActivity {
+}
+class com.example.nj.ChatActivity {
+}
+class com.example.nj.CompanyProfileAuthorizeActivity {
+}
+class com.example.nj.classes.Invitation {
+}
+class com.example.nj.ShowInvitationsActivity {
+}
+class com.example.nj.InvitationActivity {
+}
+class com.example.nj.classes.Dialog {
+}
+class com.example.nj.StartActivity {
+}
+class com.example.nj.classes.Company {
+}
+class com.example.nj.ui.home.HomeViewModel {
+}
+class com.example.nj.SettingsActivity {
+}
+class com.example.nj.classes.User {
+}
+class com.example.nj.ui.home.HomeFragment {
+}
+class com.example.nj.FindUserActivity {
+}
+class com.example.nj.MainActivity {
+}
+class com.example.nj.CompanyProfileActivity {
+}
+class com.example.nj.ProfileActivity {
+}
+class com.example.nj.classes.Message {
+}
+class com.example.nj.RegistrationCompanyActivity {
+}
+class com.example.nj.RegistrationActivity {
+}
+class com.example.nj.CompanySettingsActivity {
+}
+class com.example.nj.MyFirebaseMessagingService {
+}
+class com.example.nj.ShowUsersActivity {
+}
+
+
+androidx.appcompat.app.AppCompatActivity <|-- com.example.nj.EmployeeDialogActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.nj.ChatActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.nj.CompanyProfileAuthorizeActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.nj.ShowInvitationsActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.nj.InvitationActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.nj.StartActivity
+androidx.lifecycle.ViewModel <|-- com.example.nj.ui.home.HomeViewModel
+androidx.appcompat.app.AppCompatActivity <|-- com.example.nj.SettingsActivity
+androidx.fragment.app.Fragment <|-- com.example.nj.ui.home.HomeFragment
+androidx.appcompat.app.AppCompatActivity <|-- com.example.nj.FindUserActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.nj.MainActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.nj.CompanyProfileActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.nj.ProfileActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.nj.RegistrationCompanyActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.nj.RegistrationActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.nj.CompanySettingsActivity
+com.google.firebase.messaging.FirebaseMessagingService <|-- com.example.nj.MyFirebaseMessagingService
+androidx.appcompat.app.AppCompatActivity <|-- com.example.nj.ShowUsersActivity
+@enduml
