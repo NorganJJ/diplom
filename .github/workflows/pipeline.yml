@@ -25,4 +25,4 @@ jobs:
 
       - name: Check style project
         run: |
-          java -jar checkstyle-9.0-all.jar -c config/checkstyle.xml src/main/java
+          java -jar checkstyle-9.0-all.jar -c config/checkstyle.xml app/src/main/java
