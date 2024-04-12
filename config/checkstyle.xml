@@ -19,12 +19,10 @@
         <module name="MissingSwitchDefault"/>
         <module name="ModifierOrder"/>
         <module name="ParameterName"/>
-        <module name="RegexpSingleline"/>
-        <module name="RegexpMultiline"/>
         <module name="RequireThis"/>
         <module name="StringLiteralEquality"/>
         <module name="UpperEll"/>
     </module>
 
-    <module name="FileTabCharacter"/>
+    <module name="RegexpSingleline"/>
 </module>
