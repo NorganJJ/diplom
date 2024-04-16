@@ -6,4 +6,23 @@
 <module name="Checker">
     <property name="charset" value="UTF-8"/>
     <property name="severity" value="error"/>
+
+    <module name="TreeWalker">
+        <module name="EmptyBlock"/>
+        <module name="EmptyCatchBlock"/>
+        <module name="EmptyStatement"/>
+        <module name="HiddenField"/>
+        <module name="IllegalTokenText"/>
+        <module name="JavadocType"/>
+        <module name="LocalFinalVariableName"/>
+        <module name="MagicNumber"/>
+        <module name="MissingSwitchDefault"/>
+        <module name="ModifierOrder"/>
+        <module name="ParameterName"/>
+        <module name="RequireThis"/>
+        <module name="StringLiteralEquality"/>
+        <module name="UpperEll"/>
+    </module>
+
+    <module name="RegexpSingleline"/>
 </module>
